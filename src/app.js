@@ -11,6 +11,20 @@ const serviceAccount = require('../serviceAccountKey.json');
 app.use( favicon( path.join( __dirname, 'favicon.ico' ) ) );
 app.use( '/assets', express.static( path.join( __dirname, 'assets' ) ) );
 
+
+const firebaseConfig = {
+    apiKey: "AIzaSyD8Znx45accgfmJuvi_pe9SKo7OoQ7JtE0",
+    authDomain: "online-meeting-73126.firebaseapp.com",
+    projectId: "online-meeting-73126",
+    storageBucket: "online-meeting-73126.appspot.com",
+    messagingSenderId: "674919510574",
+    appId: "1:674919510574:web:9c86c58ca200a726c565bf",
+    measurementId: "G-QE5MSJFKTL"
+  };
+
+// Initialize Firebase
+const appinit = initializeApp(firebaseConfig);
+
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://server-auth-41acc.firebaseio.com",
